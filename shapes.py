@@ -75,7 +75,3 @@ class Shape(ABC):
                 st+=f"({name}): {value}"
             st+=")"
             return st
-
-    
-
-
