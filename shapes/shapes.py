@@ -55,8 +55,8 @@ class Shape(ABC):
     def __ge__(self, other):
         pass
     
-    #methods that are not overriden
-    def translate(self, x, y):
+    #translate is default for 2D shapes, overriden by 3D shapes
+    def translate(self, x:int|float=0, y:int|float=0):
         if not isinstance(x, (int, float)) or not isinstance(y, (int, float)):
             raise TypeError("Must use int or float to translate shape")
         self.xpos += x

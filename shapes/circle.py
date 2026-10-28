@@ -1,14 +1,9 @@
-from shapes import Shape
+from shapes.shapes import Shape
 import math
 
 class Circle(Shape):
 
-    ''' 
-    Circle inherits from Shape.
-    Example usage: c = Circle(xpos=0, ypos=0, radius=1)
-    '''
-
-    def __init__(self, radius = 1, xpos = 0, ypos = 0):
+    def __init__(self, radius:int|float=1, xpos:int|float=0, ypos:int|float=0):
         if radius < 0:
             raise ValueError("Radius cannot be negative")
 

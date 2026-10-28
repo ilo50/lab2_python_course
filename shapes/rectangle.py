@@ -1,4 +1,4 @@
-from shapes import Shape
+from shapes.shapes import Shape
 
 class Rectangle(Shape):
 
@@ -7,7 +7,12 @@ class Rectangle(Shape):
     Example usage: r = Rectangle(xpos=0, ypos=0, height=3, width=6)
     '''
 
-    def __init__(self, width = 1, height = 2, xpos = 0, ypos = 0):
+    def __init__(self, 
+                 width:int|float=1, 
+                 height:int|float=2, 
+                 xpos:int|float=0, 
+                 ypos:int|float=0
+                 ):
         
         for arg in (xpos, ypos, height, width):
             if not isinstance(arg, (int, float)):
