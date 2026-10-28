@@ -57,8 +57,8 @@ class Shape(ABC):
     
     #methods that are not overriden
     def translate(self, x, y):
-        if not isinstance(x, (int, float)) and not isinstance(y, (int, float)):
-            raise ValueError("Must use int or float to translate shape")
+        if not isinstance(x, (int, float)) or not isinstance(y, (int, float)):
+            raise TypeError("Must use int or float to translate shape")
         self.xpos += x
         self.ypos += y
 
