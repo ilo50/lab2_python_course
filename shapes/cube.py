@@ -10,7 +10,7 @@ class Cube(Shape):
                  ):
 
         for arg in (length, xpos, ypos, zpos):
-            if not isinstance(arg, (int, float)):
+            if not isinstance(arg, (int, float)) or isinstance(arg, bool):
                 raise TypeError("All arguments must be int or float")
 
         if length < 0:
@@ -69,7 +69,7 @@ class Cube(Shape):
     def translate(self, x:int|float=0, y:int|float=0, z:int|float=0):
     
         for coord in (x, y, z):
-            if not isinstance(coord, (int,tuple)):
+            if not isinstance(coord, (int,tuple)) or isinstance(coord, bool):
                 raise TypeError("Must use int or float to translate shape")
             
         self.xpos += x

@@ -4,12 +4,13 @@ import math
 class Circle(Shape):
 
     def __init__(self, radius:int|float=1, xpos:int|float=0, ypos:int|float=0):
+        
+        for arg in (radius, xpos, ypos):
+            if not isinstance(arg, (int, float)) or isinstance(arg, bool):
+                raise TypeError("All arguments must be int or float")
+
         if radius < 0:
             raise ValueError("Radius cannot be negative")
-
-        for arg in (radius, xpos, ypos):
-            if not isinstance(arg, (int, float)):
-                raise TypeError("All arguments must be int or float")
             
         self.radius = radius
         self.xpos = xpos
@@ -56,4 +57,4 @@ class Circle(Shape):
             return self.radius >= other.radius
 
     def is_unit_circle(self):
-        return self.radius == 1 and self.xpos == 0 and self.ypos == 0
+        return self.radius == 1 and self.xpos == 0 and self.ypos == 0   

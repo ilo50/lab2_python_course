@@ -57,6 +57,7 @@ def test_unit_circle():
     c1 = Circle(1)
     c2 = Circle(1,2,3)
 
-    assert c1.is_unit_circle == True
-    assert c2.is_unit_circle == False
+    assert c1.is_unit_circle() is True
+    assert c2.is_unit_circle() is False
+    
     

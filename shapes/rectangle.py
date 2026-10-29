@@ -15,7 +15,7 @@ class Rectangle(Shape):
                  ):
         
         for arg in (xpos, ypos, height, width):
-            if not isinstance(arg, (int, float)):
+            if not isinstance(arg, (int, float)) or isinstance(arg, bool):
                 raise TypeError("All arguments must be int or float")
 
         if height < 0 or width < 0:
