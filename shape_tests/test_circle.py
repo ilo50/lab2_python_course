@@ -59,5 +59,3 @@ def test_unit_circle():
 
     assert c1.is_unit_circle() is True
     assert c2.is_unit_circle() is False
-    
-    

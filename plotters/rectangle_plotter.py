@@ -8,7 +8,7 @@ from plotters.plots import Shape_Plotter
 
 class Rectangle_Plotter(Shape_Plotter):
 
-    def draw(rectangle : Rectangle):
+    def draw(self, rectangle : Rectangle):
 
         fig, ax = plt.subplots()
 
