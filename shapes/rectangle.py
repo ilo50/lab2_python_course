@@ -21,19 +21,23 @@ class Rectangle(Shape):
         if height < 0 or width < 0:
                     raise ValueError("Dimensions cannot be negative")
             
-        self.xpos = xpos
-        self.ypos = ypos
-        self.height = height
-        self.width = width
+        self._xpos = xpos
+        self._ypos = ypos
+        self._height = height
+        self._width = width
 
-    #properties
+    # properties
     @property
     def area(self):
-        return self.width*self.height
-
+        return self._width*self._height
+    
     @property
     def perimeter(self):
-        return self.width*2 + self.height*2
+        return self._width*2 + self._height*2
+
+    @property
+    def position(self):
+        return (self._xpos, self._ypos)
 
     # dunder methods
     def __eq__(self, other):
@@ -67,4 +71,4 @@ class Rectangle(Shape):
             return self.area >= other.area  
 
     def is_square(self):
-        return self.width == self.height
+        return self._width == self._height

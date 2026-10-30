@@ -1,19 +1,18 @@
 from pytest import raises
 from shapes.sphere import Sphere
+import math
 
 def test_valid_sphere():
 
-    s = Sphere(1, 2, 3, 4)
-    assert s.radius == 1
-    assert s.xpos == 2
-    assert s.ypos == 3
-    assert s.zpos == 4
+    s = Sphere(4, 3, 2, 1)
+    assert s.area == 4*math.pi*(4**2)
+    assert s.perimeter == (4*2)*math.pi
+    assert s.volume == 0.75*(math.pi*(4**3))
 
     s2 = Sphere()
-    assert s2.radius == 1
-    assert s2.xpos == 0
-    assert s2.ypos == 0
-    assert s2.zpos == 0
+    assert s2.area == 4*math.pi*(1**2)
+    assert s2.perimeter == (1*2)*math.pi
+    assert s2.volume == 0.75*(math.pi*(1**3))
 
 def test_invalid_sphere():
 
@@ -45,9 +44,8 @@ def test_translate():
 
     s = Sphere(1,1,1,1)
     s.translate(5,5,5)
-    assert s.xpos == 5+1
-    assert s.ypos == 5+1
-    assert s.zpos == 5+1
+
+    assert s.position == (5+1, 5+1, 5+1)
 
 def test_invalid_translate():
 

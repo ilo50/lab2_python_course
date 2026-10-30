@@ -4,16 +4,12 @@ from shapes.rectangle import Rectangle
 def test_valid_rectangle():
 
     r = Rectangle(3, 2, 1, 0)
-    assert r.width == 3
-    assert r.height == 2
-    assert r.xpos == 1
-    assert r.ypos == 0
+    assert r.area == 3*2
+    assert r.perimeter == 3*2 + 2*2
 
-    r2 = Rectangle()
-    assert r2.width == 1
-    assert r2.height == 2
-    assert r2.xpos == 0
-    assert r2.ypos == 0
+    r2 = Rectangle() # test default values
+    assert r2.area == 1*2
+    assert r2.perimeter == 1*2 + 2*2
 
 def test_invalid_rectangle():
 
@@ -45,8 +41,7 @@ def test_translate():
 
     r = Rectangle(1,1,1,1)
     r.translate(5,5)
-    assert r.xpos == 5+1
-    assert r.ypos == 5+1
+    assert r.position == (5+1, 5+1)
 
 def test_invalid_translate():
 

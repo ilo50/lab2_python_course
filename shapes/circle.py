@@ -12,49 +12,53 @@ class Circle(Shape):
         if radius < 0:
             raise ValueError("Radius cannot be negative")
             
-        self.radius = radius
-        self.xpos = xpos
-        self.ypos = ypos
+        self._radius = radius
+        self._xpos = xpos
+        self._ypos = ypos
 
     #properties
     @property
     def area(self):
-        return (self.radius**2)*math.pi
+        return (self._radius**2)*math.pi
 
     @property
     def perimeter(self):
-        return (self.radius*2)*math.pi
+        return (self._radius*2)*math.pi
 
+    @property
+    def position(self):
+        return (self._xpos, self._ypos)
+    
     # Dunder methods
     def __eq__(self, other):
         if not isinstance(other, Circle):
             return False
         else:
-            return self.radius == other.radius
+            return self.area == other.area
 
     def __lt__(self, other):
         if not isinstance(other, Circle):
             return False
         else:
-            return self.radius < other.radius
+            return self.area < other.area
         
     def __gt__(self, other):
         if not isinstance(other, Circle):
             return False
         else:    
-            return self.radius > other.radius
+            return self.area > other.area
 
     def __le__(self, other):
         if not isinstance(other, Circle):
             return False
         else:
-            return self.radius <= other.radius
+            return self.area <= other.area
 
     def __ge__(self, other):
         if not isinstance(other, Circle):
             return False
         else:
-            return self.radius >= other.radius
+            return self.area >= other.area
 
     def is_unit_circle(self):
-        return self.radius == 1 and self.xpos == 0 and self.ypos == 0   
+        return self.area == math.pi and self.position == (0,0) 

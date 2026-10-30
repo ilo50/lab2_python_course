@@ -16,54 +16,58 @@ class Cube(Shape):
         if length < 0:
             raise ValueError("Dimensions cannot be negative")
 
-        self.length = length
-        self.xpos = xpos
-        self.ypos = ypos
-        self.zpos = zpos
+        self._length = length
+        self._xpos = xpos
+        self._ypos = ypos
+        self._zpos = zpos
 
     #properties
     @property
     def area(self):
-        return (self.length**2)*6
+        return (self._length**2)*6
 
     @property
     def volume(self):
-        return self.length**3
+        return self._length**3
 
     @property
     def perimeter(self):
-        return self.length*4
+        return self._length*4
+
+    @property
+    def position(self):
+        return (self._xpos, self._ypos, self._zpos)
 
     # dunder methods
     def __eq__(self, other):
         if not isinstance(other, Cube):
             return False
         else:
-            return self.length == other.length
+            return self.perimeter == other.perimeter
     
     def __lt__(self, other):
         if not isinstance(other, Cube):
             return False
         else:
-            return self.length < other.length
+            return self.perimeter < other.perimeter
     
     def __gt__(self, other):
         if not isinstance(other, Cube):
             return False
         else:
-            return self.length > other.length
+            return self.perimeter > other.perimeter
     
     def __le__(self, other):
         if not isinstance(other, Cube):
             return False
         else:
-            return self.length <= other.length
+            return self.perimeter <= other.perimeter
     
     def __ge__(self, other):
         if not isinstance(other, Cube):
             return False
         else:
-            return self.length >= other.length  
+            return self.perimeter >= other.perimeter  
 
     # overwrite translate 2D standard from Shape
     def translate(self, x:int|float=0, y:int|float=0, z:int|float=0):
@@ -72,6 +76,6 @@ class Cube(Shape):
             if not isinstance(coord, (int,tuple)) or isinstance(coord, bool):
                 raise TypeError("Must use int or float to translate shape")
             
-        self.xpos += x
-        self.ypos += y
-        self.zpos += z
+        self._xpos += x
+        self._ypos += y
+        self._zpos += z

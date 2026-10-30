@@ -7,7 +7,7 @@ from matplotlib.patches import Circle as mplot_circ
 
 class Circle_Plotter(Shape_Plotter):
 
-    def draw(self, circle : Circle):
+    def draw(circle : Circle):
 
         fig, ax = plt.subplots()
 

@@ -8,7 +8,7 @@ from shapes.cube import Cube
 
 class Cube_Plotter(Shape_Plotter):
 
-    def draw(self, cube : Cube):
+    def draw(cube : Cube):
     # Create axis
 
         #cube position
@@ -19,13 +19,16 @@ class Cube_Plotter(Shape_Plotter):
         fig = plt.figure()
         ax = fig.add_subplot(111, projection='3d')
 
-        dimension = (max(x, y, z) + size)*2
-
-        ax.bar3d(x, y, z, size, size, size)
+        # use max coord offset + cube size *2 to set a large enough plotting area
+        dimension = (max(x, y, z) + size)
         ax.set_xlim(0, dimension)
         ax.set_ylim(0, dimension)
         ax.set_zlim(0, dimension)
 
+        # create the cube with position and sizes
+        ax.bar3d(x, y, z, size, size, size)
+
+        # same ratio for x y z
         ax.set_box_aspect((1, 1, 1))
         
         plt.show()
