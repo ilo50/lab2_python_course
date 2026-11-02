@@ -41,7 +41,7 @@ def test_translate():
 
     r = Rectangle(1,1,1,1)
     r.translate(5,5)
-    assert r.position == (5+1, 5+1)
+    assert (r.xpos, r.ypos) == (5+1, 5+1)
 
 def test_invalid_translate():
 

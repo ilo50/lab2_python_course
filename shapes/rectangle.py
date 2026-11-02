@@ -28,16 +28,20 @@ class Rectangle(Shape):
 
     # properties
     @property
-    def area(self):
+    def area(self) -> int | float:
         return self._width*self._height
     
     @property
-    def perimeter(self):
+    def perimeter(self) -> int | float:
         return self._width*2 + self._height*2
 
     @property
-    def position(self):
-        return (self._xpos, self._ypos)
+    def width(self) -> int | float:
+        return self._width
+    
+    @property
+    def height(self) -> int | float:
+        return self._height
 
     # dunder methods
     def __eq__(self, other):

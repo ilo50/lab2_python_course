@@ -44,7 +44,7 @@ def test_translate():
     c = Cube(1,1,1,1)
     c.translate(5,5,5)
 
-    assert c.position == (5+1, 5+1, 5+1)
+    assert (c.xpos, c.ypos, c.zpos) == (5+1, 5+1, 5+1)
 
 def test_invalid_translate():
 

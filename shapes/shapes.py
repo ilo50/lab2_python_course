@@ -34,11 +34,16 @@ class Shape(ABC):
     def perimeter(self) -> int | float:
         pass
 
+    # predefined property methods
     @property
-    @abstractmethod
-    def position(self):
-        pass
+    def xpos(self) -> int | float:
+        return self._xpos
 
+    @property
+    def ypos(self) -> int | float:
+        return self._ypos
+
+    # dunders
     @abstractmethod
     def __eq__(self, other):
         pass
@@ -63,15 +68,15 @@ class Shape(ABC):
         self._ypos += y
 
     def __repr__(self) -> str:
-            st = ""
-            for name, value in vars(self).items():
-                st+=f"{name}: {value}"
-            return st
+                st = f"Class={type(self).__name__}("
+                for name, value in vars(self).items():
+                    st+=f"[{name}={value}]"
+                st += ")"
+                return st
 
     def __str__(self) -> str:
-            st = f"{type(self)}"
-            st = st[17:-2] + "("
+            st = f"{type(self).__name__}("
             for name, value in vars(self).items():
-                st+=f"({name}): {value}"
-            st+=")"
+                st+=f"[{value}]"
+            st += ")"
             return st

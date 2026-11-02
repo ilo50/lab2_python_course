@@ -18,16 +18,16 @@ class Circle(Shape):
 
     #properties
     @property
-    def area(self):
+    def area(self) -> int | float:
         return (self._radius**2)*math.pi
 
     @property
-    def perimeter(self):
+    def perimeter(self) -> int | float:
         return (self._radius*2)*math.pi
 
-    @property
-    def position(self):
-        return (self._xpos, self._ypos)
+    @property 
+    def radius(self) -> int | float:
+        return (self._radius)
     
     # Dunder methods
     def __eq__(self, other):
@@ -61,4 +61,4 @@ class Circle(Shape):
             return self.area >= other.area
 
     def is_unit_circle(self):
-        return self.area == math.pi and self.position == (0,0) 
+        return self.area == math.pi and (self.xpos, self.ypos) == (0,0) 

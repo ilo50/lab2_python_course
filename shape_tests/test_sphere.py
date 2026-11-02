@@ -45,7 +45,7 @@ def test_translate():
     s = Sphere(1,1,1,1)
     s.translate(5,5,5)
 
-    assert s.position == (5+1, 5+1, 5+1)
+    assert (s.xpos, s.ypos, s.zpos) == (5+1, 5+1, 5+1)
 
 def test_invalid_translate():
 

@@ -8,6 +8,7 @@ from shapes.cube import Cube
 
 class Cube_Plotter(Shape_Plotter):
 
+    # ChatGPT
     def draw(cube : Cube):
     # Create axis
 

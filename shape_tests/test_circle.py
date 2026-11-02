@@ -41,7 +41,7 @@ def test_translate():
     c = Circle(1,1,1)
     c.translate(5,5)
 
-    assert c.position == (5+1, 5+1)
+    assert (c.xpos, c.ypos) == (5+1, 5+1)
 
 def test_invalid_translate():
 

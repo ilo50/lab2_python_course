@@ -23,20 +23,24 @@ class Cube(Shape):
 
     #properties
     @property
-    def area(self):
+    def area(self) -> int | float:
         return (self._length**2)*6
 
     @property
-    def volume(self):
+    def volume(self) -> int | float:
         return self._length**3
 
     @property
-    def perimeter(self):
+    def perimeter(self) -> int | float:
         return self._length*4
 
     @property
-    def position(self):
-        return (self._xpos, self._ypos, self._zpos)
+    def zpos(self) -> int | float:
+        return self._zpos
+
+    @property 
+    def length(self) -> int | float:
+        return self._length
 
     # dunder methods
     def __eq__(self, other):
