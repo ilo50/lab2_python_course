@@ -10,18 +10,6 @@ class Shape(ABC):
             ...
         def perimeter(self):
             ...
-        def position(self):
-            ...
-        def __eq__(self, other):
-            ...
-        def __lt__(self, other):
-            ...
-        def __gt__(self, other):
-            ...
-        def __le__(self, other):
-            ...
-        def __ge__(self, other):
-            ...
     '''
     #abstract property methods
     @property
@@ -43,30 +31,37 @@ class Shape(ABC):
     def ypos(self) -> int | float:
         return self._ypos
 
-    # dunders
-    @abstractmethod
+    # dunders, all 2D shapes use area as comparator
     def __eq__(self, other):
-        pass
-    @abstractmethod
-    def __lt__(self, other):
-        pass
-    @abstractmethod
-    def __gt__(self, other):
-        pass
-    @abstractmethod
-    def __le__(self, other):
-        pass
-    @abstractmethod
-    def __ge__(self, other):
-        pass
+        if not (type(self) == type(self)): # only allow comparison to same class
+            raise TypeError(f"{type(self).__name__} does not support comparison with {type(other).__name__}!")
+        else:
+            return self.area == other.area                 
     
-    #translate is default for 2D shapes, overriden by 3D shapes
-    def translate(self, x:int|float=0, y:int|float=0) -> None:
-        if not isinstance(x, (int, float)) or not isinstance(y, (int, float)):
-            raise TypeError("Must use int or float to translate shape")
-        self._xpos += x
-        self._ypos += y
-
+    def __lt__(self, other):
+        if not (type(self) == type(self)):
+            raise TypeError(f"{type(self).__name__} does not support comparison with {type(other).__name__}!")
+        else:
+            return self.area < other.area
+            
+    def __gt__(self, other):
+        if not (type(self) == type(self)):
+            raise TypeError(f"{type(self).__name__} does not support comparison with {type(other).__name__}!")
+        else:    
+            return self.area > other.area
+    
+    def __le__(self, other):
+        if not (type(self) == type(self)):
+            raise TypeError(f"{type(self).__name__} does not support comparison with {type(other).__name__}!")
+        else:
+            return self.area <= other.area
+    
+    def __ge__(self, other):
+        if not (type(self) == type(self)):
+            raise TypeError(f"{type(self).__name__} does not support comparison with {type(other).__name__}!")
+        else:
+            return self.area >= other.area
+    
     def __repr__(self) -> str:
                 st = f"Class={type(self).__name__}("
                 for name, value in vars(self).items():
@@ -80,3 +75,10 @@ class Shape(ABC):
                 st+=f"[{value}]"
             st += ")"
             return st
+
+    #translate, same for all 2D shapes
+    def translate(self, x:int|float=0, y:int|float=0) -> None:
+        if not isinstance(x, (int, float)) or not isinstance(y, (int, float)):
+            raise TypeError("Must use int or float to translate shape")
+        self._xpos += x
+        self._ypos += y

@@ -1,7 +1,7 @@
-from shapes.shapes import Shape
+from shapes.shapes3D import Shape3D
 import math
 
-class Sphere(Shape):
+class Sphere(Shape3D):
 
     def __init__(self, 
                  radius:int|float=1, 

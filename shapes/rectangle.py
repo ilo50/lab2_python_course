@@ -2,11 +2,6 @@ from shapes.shapes import Shape
 
 class Rectangle(Shape):
 
-    ''' 
-    Rectangle inherits from Shape.
-    Example usage: r = Rectangle(xpos=0, ypos=0, height=3, width=6)
-    '''
-
     def __init__(self, 
                  width:int|float=1, 
                  height:int|float=2, 
@@ -42,37 +37,6 @@ class Rectangle(Shape):
     @property
     def height(self) -> int | float:
         return self._height
-
-    # dunder methods
-    def __eq__(self, other):
-        if not isinstance(other, Rectangle):
-            return False
-        else:
-            return self.area == other.area
-
-    def __lt__(self, other):
-        if not isinstance(other, Rectangle):
-            return False
-        else:
-            return self.area < other.area
-
-    def __gt__(self, other):
-        if not isinstance(other, Rectangle):
-            return False
-        else:
-            return self.area > other.area
-
-    def __le__(self, other):
-        if not isinstance(other, Rectangle):
-            return False
-        else:
-            return self.area <= other.area
-
-    def __ge__(self, other):
-        if not isinstance(other, Rectangle):
-            return False
-        else:
-            return self.area >= other.area  
 
     def is_square(self):
         return self._width == self._height

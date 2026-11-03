@@ -36,29 +36,7 @@ class Circle(Shape):
         else:
             return self.area == other.area
 
-    def __lt__(self, other):
-        if not isinstance(other, Circle):
-            return False
-        else:
-            return self.area < other.area
-        
-    def __gt__(self, other):
-        if not isinstance(other, Circle):
-            return False
-        else:    
-            return self.area > other.area
-
-    def __le__(self, other):
-        if not isinstance(other, Circle):
-            return False
-        else:
-            return self.area <= other.area
-
-    def __ge__(self, other):
-        if not isinstance(other, Circle):
-            return False
-        else:
-            return self.area >= other.area
+    
 
     def is_unit_circle(self):
         return self.area == math.pi and (self.xpos, self.ypos) == (0,0) 

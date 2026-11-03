@@ -1,6 +1,6 @@
-from shapes.shapes import Shape
+from shapes.shapes3D import Shape3D
 
-class Cube(Shape):
+class Cube(Shape3D):
 
     def __init__(self, 
                  length:int|float=1, 
@@ -41,45 +41,3 @@ class Cube(Shape):
     @property 
     def length(self) -> int | float:
         return self._length
-
-    # dunder methods
-    def __eq__(self, other):
-        if not isinstance(other, Cube):
-            return False
-        else:
-            return self.perimeter == other.perimeter
-    
-    def __lt__(self, other):
-        if not isinstance(other, Cube):
-            return False
-        else:
-            return self.perimeter < other.perimeter
-    
-    def __gt__(self, other):
-        if not isinstance(other, Cube):
-            return False
-        else:
-            return self.perimeter > other.perimeter
-    
-    def __le__(self, other):
-        if not isinstance(other, Cube):
-            return False
-        else:
-            return self.perimeter <= other.perimeter
-    
-    def __ge__(self, other):
-        if not isinstance(other, Cube):
-            return False
-        else:
-            return self.perimeter >= other.perimeter  
-
-    # overwrite translate 2D standard from Shape
-    def translate(self, x:int|float=0, y:int|float=0, z:int|float=0):
-    
-        for coord in (x, y, z):
-            if not isinstance(coord, (int,tuple)) or isinstance(coord, bool):
-                raise TypeError("Must use int or float to translate shape")
-            
-        self._xpos += x
-        self._ypos += y
-        self._zpos += z
