@@ -1,5 +1,6 @@
 from pytest import raises
 from shapes.sphere import Sphere
+from shapes.cube import Cube
 import math
 
 def test_valid_sphere():
@@ -39,6 +40,13 @@ def test_equals():
 
     assert s1 >= s2
     assert s3 >= s2
+
+def test_invalid_equals():
+    s1 = Sphere()
+    c1 = Cube()
+    
+    with raises(TypeError):
+        c1 == s1
 
 def test_translate():
 

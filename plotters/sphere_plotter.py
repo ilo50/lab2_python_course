@@ -3,10 +3,10 @@ from mpl_toolkits.mplot3d import Axes3D
 
 import numpy as np
 
-from plotters.plots import Shape_Plotter
+from plotters.plots import Figure_Plotter
 from shapes.sphere import Sphere
 
-class Sphere_Plotter(Shape_Plotter):
+class Sphere_Plotter(Figure_Plotter):
 
     # ChatGPT
     def draw(sphere : Sphere):

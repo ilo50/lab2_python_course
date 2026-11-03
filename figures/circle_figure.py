@@ -1,13 +1,10 @@
 from figures.figures import Figure
 from shapes.circle import Circle
 from matplotlib.patches import Circle as mplot_circ
-import random
 
 class Circle_Figure(Figure):
 
     def __init__(self, circle: Circle):
-
-        color = tuple(random.random() for _ in range(3))
 
         circle_fig = mplot_circ(
                                (circle.xpos, circle.ypos), 

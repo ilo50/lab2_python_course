@@ -1,28 +1,19 @@
-from plotters.plots import Shape_Plotter
-
-from shapes.circle import Circle
-
+from plotters.plots import Figure_Plotter
+from figures.circle_figure import Circle_Figure
 import matplotlib.pyplot as plt
-from matplotlib.patches import Circle as mplot_circ
 
-class Circle_Plotter(Shape_Plotter):
 
-    def draw(circle : Circle):
+class Circle_Plotter(Figure_Plotter):
+
+    def draw(circle_fig : Circle_Figure):
 
         fig, ax = plt.subplots()
 
-        circle_fig = mplot_circ(
-                                  (circle.xpos, circle.ypos), 
-                                  radius=circle.radius,  
-                                  edgecolor='blue', 
-                                  facecolor='lightblue'
-                                  )
-        ax.add_patch(circle_fig)
+        ax.add_patch(circle_fig.fig)
 
         # adjust the size of the plot to the largest value of either width + x offset or height + y offset
-        fig_size = max(abs(circle.xpos) + abs(circle.radius*2), abs(circle.ypos) + abs(circle.radius*2))
-        ax.set_xlim(-(fig_size), fig_size)
-        ax.set_ylim(-(fig_size), fig_size)
+        ax.set_xlim(-(circle_fig._fig_size), circle_fig.fig_size)
+        ax.set_ylim(-(circle_fig.fig_size), circle_fig.fig_size)
 
         ax.set_aspect('equal')
         plt.plot(0,color="r", marker = '*')

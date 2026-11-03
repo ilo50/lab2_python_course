@@ -33,32 +33,32 @@ class Shape(ABC):
 
     # dunders, all 2D shapes use area as comparator
     def __eq__(self, other):
-        if not (type(self) == type(self)): # only allow comparison to same class
-            raise TypeError(f"{type(self).__name__} does not support comparison with {type(other).__name__}!")
+        if not (type(self) == type(other)): # only allow comparison to same class
+            return False
         else:
             return self.area == other.area                 
     
     def __lt__(self, other):
-        if not (type(self) == type(self)):
-            raise TypeError(f"{type(self).__name__} does not support comparison with {type(other).__name__}!")
+        if not (type(self) == type(other)):
+            return False
         else:
             return self.area < other.area
             
     def __gt__(self, other):
-        if not (type(self) == type(self)):
-            raise TypeError(f"{type(self).__name__} does not support comparison with {type(other).__name__}!")
+        if not (type(self) == type(other)):
+            return False
         else:    
             return self.area > other.area
     
     def __le__(self, other):
-        if not (type(self) == type(self)):
-            raise TypeError(f"{type(self).__name__} does not support comparison with {type(other).__name__}!")
+        if not (type(self) == type(other)):
+            return False
         else:
             return self.area <= other.area
     
     def __ge__(self, other):
-        if not (type(self) == type(self)):
-            raise TypeError(f"{type(self).__name__} does not support comparison with {type(other).__name__}!")
+        if not (type(self) == type(other)):
+            return False
         else:
             return self.area >= other.area
     

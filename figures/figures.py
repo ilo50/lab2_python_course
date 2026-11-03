@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from shapes.shapes import Shape
+from shapes.shapes2D import Shape
 
 class Figure(ABC):
 

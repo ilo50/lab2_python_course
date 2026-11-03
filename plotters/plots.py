@@ -1,7 +1,8 @@
 from abc import ABC, abstractmethod
+from figures.figures import Figure
 
-class Shape_Plotter(ABC):
+class Figure_Plotter(ABC):
 
     @abstractmethod
-    def draw(self, shape):
+    def draw(self, figure: Figure):
         pass

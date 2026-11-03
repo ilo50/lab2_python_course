@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 from figures.figures import Figure
-import random
 
 class Shape2dPlotter:
 

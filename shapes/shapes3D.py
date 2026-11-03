@@ -43,32 +43,32 @@ class Shape3D(ABC):
 
     # dunders, 3D shapes use volumes to compare
     def __eq__(self, other):
-        if not (type(self) == type(self)): # only allow comparison to same class
-            raise TypeError(f"{type(self).__name__} does not support comparison with {type(other).__name__}!")
+        if not (type(self) == type(other)): # only allow comparison to same class
+            return False
         else:
             return self.volume == other.volume                 
         
     def __lt__(self, other):
-        if not (type(self) == type(self)):
-            raise TypeError(f"{type(self).__name__} does not support comparison with {type(other).__name__}!")
+        if not (type(self) == type(other)):
+            return False
         else:
             return self.volume < other.volume
                 
     def __gt__(self, other):
-        if not (type(self) == type(self)):
-            raise TypeError(f"{type(self).__name__} does not support comparison with {type(other).__name__}!")
+        if not (type(self) == type(other)):
+            return False
         else:    
             return self.volume > other.volume
         
     def __le__(self, other):
-        if not (type(self) == type(self)):
-            raise TypeError(f"{type(self).__name__} does not support comparison with {type(other).__name__}!")
+        if not (type(self) == type(other)):
+            return False
         else:
             return self.volume <= other.volume
         
     def __ge__(self, other):
-        if not (type(self) == type(self)):
-            raise TypeError(f"{type(self).__name__} does not support comparison with {type(other).__name__}!")
+        if not (type(self) == type(other)):
+            return False
         else:
             return self.volume >= other.volume
     

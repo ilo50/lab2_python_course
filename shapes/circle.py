@@ -1,4 +1,4 @@
-from shapes.shapes import Shape
+from shapes.shapes2D import Shape
 import math
 
 class Circle(Shape):
@@ -28,15 +28,6 @@ class Circle(Shape):
     @property 
     def radius(self) -> int | float:
         return (self._radius)
-    
-    # Dunder methods
-    def __eq__(self, other):
-        if not isinstance(other, Circle):
-            return False
-        else:
-            return self.area == other.area
-
-    
 
     def is_unit_circle(self):
         return self.area == math.pi and (self.xpos, self.ypos) == (0,0) 

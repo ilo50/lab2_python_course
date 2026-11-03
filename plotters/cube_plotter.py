@@ -3,10 +3,10 @@ from mpl_toolkits.mplot3d import Axes3D
 
 import numpy as np
 
-from plotters.plots import Shape_Plotter
+from plotters.plots import Figure_Plotter
 from shapes.cube import Cube
 
-class Cube_Plotter(Shape_Plotter):
+class Cube_Plotter(Figure_Plotter):
 
     # ChatGPT
     def draw(cube : Cube):

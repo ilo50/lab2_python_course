@@ -1,5 +1,6 @@
 from pytest import raises
 from shapes.rectangle import Rectangle
+from shapes.circle import Circle
 
 def test_valid_rectangle():
 
@@ -36,6 +37,13 @@ def test_equals():
 
     assert r1 >= r2
     assert r3 >= r2
+
+def test_invalid_equals():
+    r1 = Rectangle()
+    c1 = Circle()
+
+    with raises(TypeError):
+        r1 == c1
 
 def test_translate():
 
