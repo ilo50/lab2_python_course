@@ -29,5 +29,5 @@ class Circle(Shape):
     def radius(self) -> int | float:
         return (self._radius)
 
-    def is_unit_circle(self):
+    def is_unit_circle(self) -> bool:
         return self.area == math.pi and (self.xpos, self.ypos) == (0,0) 
