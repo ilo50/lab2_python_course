@@ -1,11 +1,14 @@
 
 import matplotlib.pyplot as plt
 from figures.rectangle_figure import Rectangle_Figure
-from plotters.plots import Figure_Plotter
+from plotters.plotter2D import Figure_Plotter2D
 
-class Rectangle_Plotter(Figure_Plotter):
+class Rectangle_Plotter(Figure_Plotter2D):
 
-    def draw(rectangle_fig : Rectangle_Figure):
+    def draw(rectangle_fig : Rectangle_Figure) -> None:
+
+        if not isinstance (rectangle_fig, Rectangle_Figure):
+            raise ValueError("Only rectangle figures are supported for rectangle plotter")
 
         fig, ax = plt.subplots()
 

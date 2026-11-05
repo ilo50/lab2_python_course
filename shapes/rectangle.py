@@ -1,6 +1,6 @@
-from shapes.shapes2D import Shape
+from shapes.shapes2D import Shape2D
 
-class Rectangle(Shape):
+class Rectangle(Shape2D):
 
     def __init__(self, 
                  width:int|float=1, 

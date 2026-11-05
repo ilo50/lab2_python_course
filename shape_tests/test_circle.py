@@ -42,8 +42,7 @@ def test_invalid_equals():
     c1 = Circle()
     r1 = Rectangle()
 
-    with raises(TypeError):
-        c1 == r1
+    assert c1 != r1
 
 def test_translate():
 

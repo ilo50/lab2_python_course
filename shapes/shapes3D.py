@@ -3,14 +3,12 @@ from abc import ABC, abstractmethod
 class Shape3D(ABC):
 
     '''
-    Abstract class for creating a 3D shape.
-    Must implement these methods:
-        def volume(self):
-            ...
-        def area(self):
-            ...
-        def perimeter(self):
-            ...
+    3 Dimensional shape, contains properties: 
+    volume, area, perimeter, xpos, ypos, zpos
+    
+    contains a few dunder methods
+    
+    contains a translate to change position
     '''
     #abstract property methods
     @property

@@ -1,15 +1,12 @@
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
-
 import numpy as np
-
-from plotters.plots import Figure_Plotter
+from plotters.plotter3D import Shape_Plotter3D
 from shapes.sphere import Sphere
 
-class Sphere_Plotter(Figure_Plotter):
+class Sphere_Plotter(Shape_Plotter3D):
 
     # ChatGPT
-    def draw(sphere : Sphere):
+    def draw(sphere : Sphere) -> None:
     # Create axis
 
         fig = plt.figure()

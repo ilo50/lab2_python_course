@@ -1,15 +1,11 @@
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
-
-import numpy as np
-
-from plotters.plots import Figure_Plotter
+from plotters.plotter3D import Shape_Plotter3D
 from shapes.cube import Cube
 
-class Cube_Plotter(Figure_Plotter):
+class Cube_Plotter(Shape_Plotter3D):
 
     # ChatGPT
-    def draw(cube : Cube):
+    def draw(cube : Cube) -> None:
     # Create axis
 
         #cube position

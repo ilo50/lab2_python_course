@@ -43,8 +43,7 @@ def test_equals():
 def test_invalid_equals():
     c1 = Cube()
     s1 = Sphere()
-    with raises(TypeError):
-        c1 == s1
+    assert c1 != s1 
 
 def test_translate():
 

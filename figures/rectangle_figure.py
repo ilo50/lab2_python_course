@@ -6,6 +6,9 @@ class Rectangle_Figure(Figure):
 
     def __init__(self, rectangle: Rectangle):
 
+        if not isinstance (rectangle, Rectangle):
+            raise TypeError("Only rectangles shapes can be used to create rectangle figures")
+
         rectangle_fig = mplot_rect(
                                (rectangle.xpos, rectangle.ypos), 
                                width=rectangle.width,  

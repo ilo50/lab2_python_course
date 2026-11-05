@@ -1,15 +1,14 @@
 from abc import ABC, abstractmethod
 
-class Shape(ABC):
+class Shape2D(ABC):
 
     '''
-    Abstract class for creating a shape.
-    Must implement these methods:
-    
-        def area(self):
-            ...
-        def perimeter(self):
-            ...
+    2 Dimensional shape, contains properties: 
+    area, perimeter, xpos, ypos
+
+    contains a few dunder methods
+
+    contains a translate to change position
     '''
     #abstract property methods
     @property

@@ -1,11 +1,14 @@
-from plotters.plots import Figure_Plotter
+from plotters.plotter2D import Figure_Plotter2D
 from figures.circle_figure import Circle_Figure
 import matplotlib.pyplot as plt
 
 
-class Circle_Plotter(Figure_Plotter):
+class Circle_Plotter(Figure_Plotter2D):
 
-    def draw(circle_fig : Circle_Figure):
+    def draw(circle_fig : Circle_Figure) -> None:
+
+        if not isinstance (circle_fig, Circle_Figure):
+            raise ValueError("Only circle figures are supported for circle plotter")
 
         fig, ax = plt.subplots()
 

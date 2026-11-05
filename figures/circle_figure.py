@@ -6,6 +6,9 @@ class Circle_Figure(Figure):
 
     def __init__(self, circle: Circle):
 
+        if not isinstance (circle, Circle):
+            raise TypeError("Only circle shapes can be used to create circle figures")
+
         circle_fig = mplot_circ(
                                (circle.xpos, circle.ypos), 
                                radius=circle.radius,  

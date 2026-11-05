@@ -1,14 +1,16 @@
 from abc import ABC, abstractmethod
-from shapes.shapes2D import Shape
+from shapes.shapes2D import Shape2D
 
 class Figure(ABC):
 
     '''
-    Abstract class for translating a Shape into a Figure used in matplot
+    A figure is a shape translation used in plotters
+
+    contains properties: fig_size, fig
     '''
     
     @abstractmethod
-    def __init__(self, shape: Shape):
+    def __init__(self, shape: Shape2D):
         pass
 
     @property
