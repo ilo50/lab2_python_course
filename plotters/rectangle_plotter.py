@@ -18,7 +18,8 @@ class Rectangle_Plotter(Figure_Plotter2D):
         ax.set_ylim(-(rectangle_fig.fig_size), rectangle_fig.fig_size)
 
         ax.set_aspect('equal')
-        plt.plot(0,color="r", marker = '*')
-        plt.grid(True)
-        plt.title('Rectangle')
+        ax.plot(0,color="r", marker = '*')
+        ax.grid(True)
+        ax.set_title('Rectangle')
+        
         plt.show()

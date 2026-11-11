@@ -25,8 +25,9 @@ class Shape2dPlotter:
         ax.set_ylim(-(size), size)
 
         ax.set_aspect('equal')
-        plt.plot(0,color="red", marker = '*')
-        plt.grid(True)
-        plt.title(f'{count} instance(s) of 2D Shapes')
+        ax.plot(0,color="red", marker = '*')
+        ax.grid(True)
+        ax.set_title(f'{count} instance(s) of 2D Shapes')
+        
         plt.show()
                 

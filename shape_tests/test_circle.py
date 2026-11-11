@@ -2,6 +2,9 @@ from pytest import raises
 from shapes.circle import Circle
 from shapes.rectangle import Rectangle
 
+from figures.circle_figure import Circle_Figure
+from plotters.circle_plotter import Circle_Plotter
+
 import math
 
 def test_valid_circle():
@@ -64,3 +67,9 @@ def test_unit_circle():
 
     assert c1.is_unit_circle() is True
     assert c2.is_unit_circle() is False
+
+def test_plot_circ():
+
+    c = Circle()
+
+    Circle_Plotter.draw(Circle_Figure(c))
